@@ -1,0 +1,14 @@
+variables:
+  REGISTRY_PROJECT: cthulhoo
+
+include:
+  - project: 'ci/ci-templates'
+    ref: master
+    file: .ci-build-docker-kaniko.yml
+
+tt-rss-web-static:
+  extends: .build-docker-kaniko
+  variables:
+    NAME: ${CI_JOB_NAME}
+    BUILD_CONTEXT: .
+    VERSION: latest
