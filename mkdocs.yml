@@ -1,6 +1,6 @@
 site_name: Tiny Tiny RSS
 site_url: https://tt-rss.org
-site_dir: html
+site_dir: public
 markdown_extensions:
   - pymdownx.magiclink
   - pymdownx.highlight:
