@@ -12,12 +12,9 @@ hide:
 ### I want to check how tt-rss renders my feed / the feed I'm trying to use is parsed incorrectly
 
 - tt-rss expects valid XML feed data which is parsed using libxml. Any XML parse errors, should you feel that libxml is misbehaving (which is unlikely), should be reported to libxml developers. We don't add hacks for invalid XML on tt-rss side.
-
-- You can run any RSS/Atom feed through tt-rss parser [here](https://tt-rss.org/myfeedsucks/).
+- You can use the [demo](https://demo.tt-rss.org) to see how tt-rss reacts to any specific feed.
 
 Plugins may affect parsing, consider disabling any plugins before investigating XML-related issues.
-
-See this thread for more information / feedback: <https://community.tt-rss.org/t/my-feed-doesnt-parse-properly-or-does-it-myfeedsucks/30>
 
 See also: https://community.tt-rss.org/search?q=libxml%20error
 
