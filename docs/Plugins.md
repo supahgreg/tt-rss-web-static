@@ -100,6 +100,12 @@ https://github.com/ldidry/af_tapastic.git
 
 #### API plugins
 
+##### FreshRSS / Google Reader API Support
+
+Use any RSS app or client that supports FreshRSS or the Google Reader API.
+
+https://github.com/eric-pierce/freshapi
+
 ##### Fever API emulator
 
 Simulates the Fever API for reading RSS Feeds with your Fever clients.
