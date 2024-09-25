@@ -1,8 +1,12 @@
+# compose for local development
+
 version: '3'
 
 services:
   web-static:
-    image: registry.fakecake.org/cthulhoo/tt-rss-web-static:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
     restart: always
     ports:
-      - 8881:8080
+      - 127.0.0.1:8881:8080

@@ -1,0 +1,21 @@
+FROM registry.fakecake.org/docker.io/python:3.11-alpine AS build
+
+WORKDIR /app
+
+ADD requirements.txt /app
+
+ENV PYPI_PROXY=https://nexus.fakecake.org/repository/pip/simple/
+
+RUN pip config --global set global.index-url $PYPI_PROXY && \
+   pip config --global set global.trusted-host $PYPI_PROXY && \
+   pip3 install -r requirements.txt
+
+ADD docs /app/docs
+ADD mkdocs.yml /app/
+ADD overrides /app/overrides
+
+RUN mkdocs build --strict
+
+FROM registry.fakecake.org/docker.io/nginxinc/nginx-unprivileged:1-alpine
+
+COPY --from=build /app/public /usr/share/nginx/html
