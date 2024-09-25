@@ -102,7 +102,7 @@ https://github.com/ldidry/af_tapastic.git
 
 ##### FreshRSS / Google Reader API Plugin
 
-Use any RSS app or client that supports either the FreshRSS or Google Reader API
+Use any RSS app or client that supports either the FreshRSS or Google Reader API.
 
 https://github.com/eric-pierce/freshapi
 
