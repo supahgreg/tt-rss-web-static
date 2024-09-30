@@ -14,7 +14,7 @@ instead of PostgreSQL 'db' container.
 
 Images are signed using [cosign](https://docs.sigstore.dev/cosign/verifying/verify/). You can verify the signatures as follows:
 
-1. Save the following public key as `cosign.pub`:
+Save the following public key as `cosign.pub`:
 
 ```
 -----BEGIN PUBLIC KEY-----
@@ -23,7 +23,7 @@ DDZpyS24bZzLoqZ3uEROqDusa9F9gNWP4sd3nbH02Tc0x89x5mM29wVg3w==
 -----END PUBLIC KEY-----
 ```
 
-2. Verify signature using `cosign`:
+Verify signature using `cosign`:
 
 ```sh
 $ cosign verify --key cosign.pub cthulhoo/ttrss-web-nginx:latest \
