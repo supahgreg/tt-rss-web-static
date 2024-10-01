@@ -290,7 +290,7 @@ Note: `sudo -E` is needed to keep environment variables.
 
 !!! notice
 
-   First party plugins can be added using plugin installer in `Preferences` &rarr; `Plugins`.
+    First party plugins can be added using plugin installer in `Preferences` &rarr; `Plugins`.
 
 By default, tt-rss code is stored on a persistent docker volume (``app``). You can find
 its location like this:
