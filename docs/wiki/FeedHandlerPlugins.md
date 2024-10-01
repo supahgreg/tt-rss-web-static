@@ -1,5 +1,10 @@
 # Feed handler plugins
 
+!!! warning
+
+    Unless you have a strong need for these plugins, using them is not recommended. If
+    you do use them, at least don't enable them for all feeds.
+
 Some plugins utilize global per-feed content hooks which either modify fetched
 feed XML data (i.e. fixing broken XML) or even generate it entirely, for tt-rss
 to process, for websites that don't actually provide RSS feeds.
@@ -23,9 +28,6 @@ behavior.
 
 Additionally, tt-rss being blacklisted by feed publishers may negatively affect
 other users.
-
-**We recommend not using such plugins unless you have a strong need for them. If
-you do use them, at least don't enable them for all feeds**.
 
 See also:
 

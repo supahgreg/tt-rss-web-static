@@ -5,9 +5,9 @@ hide:
 
 # FAQ
 
-### [Docker-related stuff has a separate FAQ page](wiki/InstallationNotes.md#faq)
+!!! notice
 
--------------------
+    [Docker-related stuff has a separate FAQ page](wiki/InstallationNotes.md#faq)
 
 ### I want to check how tt-rss renders my feed / the feed I'm trying to use is parsed incorrectly
 

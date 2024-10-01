@@ -1,9 +1,10 @@
 # Installing on a host machine
 
-- ***Host installations are not supported starting 2021. Consider using [Docker](InstallationNotes.md) when planning new tt-rss installations.***
-- *This document is considered deprecated. Information here may be obsolete and/or inaccurate.*
+!!! warning
 
-------
+    Host installations are not supported starting 2021. Consider using [Docker](InstallationNotes.md) when planning new tt-rss installations.
+
+    This document is considered deprecated. Information here may be obsolete and/or inaccurate.
 
 Before you begin, you’ll need the following:
 

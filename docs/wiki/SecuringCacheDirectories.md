@@ -1,5 +1,10 @@
 # Securing Cache Directories
 
+!!! notice
+
+    Official container images restrict `/cache` access by default. This page applies only to
+    legacy host installations.
+
 While nothing critical is stored in cache directories by tt-rss nor do files
 have easily guessable names, you may consider forbidding external access over
 HTTP to these directories anyway. This is not required, however.

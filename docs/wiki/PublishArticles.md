@@ -12,4 +12,7 @@ icon](http://feedicons.com/) near headline title:
 
 Resulting URL is displayed in Preferences (`Feeds` &rarr; `Published & shared articles`).
 
-You can also publish articles automatically using filters (`Action` &rarr; `Publish article`).
+
+!!! notice
+
+    You can also publish articles automatically using filters (`Action` &rarr; `Publish article`).

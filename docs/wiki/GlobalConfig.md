@@ -2,27 +2,22 @@
 
 All settings (see `_DEFAULTS[]` for default values) are listed here:
 
-- https://srv.tt-rss.org/ttrss-docs/classes/Config.html (auto-generated class documentation)
+- https://tt-rss.org/ttrss-docs/classes/Config.html (auto-generated class documentation)
 - https://git.tt-rss.org/fox/tt-rss.git/tree/classes/Config.php (source code, including default values)
 
----------------
-
-It is preferred to adjust tt-rss global configuration through the environment,
-i.e. defined in `.env` when using docker-compose setup:
+It is preferred to adjust tt-rss global configuration through the environment, i.e. defined in `.env` when using docker-compose setup:
 
 ```ini
 # Copy this file to .env before building the container.
 # Put any local modifications here.
 
-TTRSS_SELF_URL_PATH=http://127.0.0.1/tt-rss
+TTRSS_SESSION_COOKIE_LIFETIME=2592000
 ```
 
-Alternatively, you can **create** `config.php` in tt-rss root directory (copied
-from `config.php-dist`), using the following syntax:
+Alternatively, you can **create** `config.php` in tt-rss root directory (copied from `config.php-dist`), using the following syntax:
 
-```php
+```js
 putenv('TTRSS_DB_HOST=myserver');
-putenv('TTRSS_SELF_URL_PATH=http://example.com/tt-rss');
 putenv('TTRSS_SESSION_COOKIE_LIFETIME='.(86400*30));
 ```
 
@@ -33,24 +28,25 @@ putenv('TTRSS_SESSION_COOKIE_LIFETIME='.(86400*30));
 
 Legacy plugin-required constants also go to `config.php`, using `define()`:
 
-```php
+```js
 define('LEGACY_CONSTANT', 'value');
 ```
 
 To set computed values via `putenv()` you have to get them evaluated by PHP, this would work:
 
-```php
+```js
 putenv('TTRSS_SESSION_COOKIE_LIFETIME='.(86400*30));
 ```
 
 However, these won't give you expected results:
 
-```php
+```js
 putenv("TTRSS_SESSION_COOKIE_LIFETIME='2592000'");
-# => 0, because '2592000' is an invalid number
+// => 0, because quoted '2592000' is an invalid number
 
 putenv('TTRSS_SESSION_COOKIE_LIFETIME=86400*30');
-# => 86400, right side expression is not evaluated, instead you're casting string literal "86400*30" to integer
+// => 86400, right side expression is not evaluated,
+// instead you're casting string literal "86400*30" to an integer
 ```
 
 Note that all values should be precomputed when setting via `.env` because they

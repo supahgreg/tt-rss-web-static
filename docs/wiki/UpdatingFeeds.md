@@ -1,10 +1,10 @@
 # Updating Feeds
 
-- ***Host installations are not supported starting 2021. Consider using [Docker](InstallationNotes.md) when planning new tt-rss installations.***
-- *The following applies to host installations only, updates are handled out of the box if using recommended [dockerized setup](https://git.tt-rss.org/fox/ttrss-docker-compose).*
-- *This document is considered deprecated.*
+!!! warning
 
-------
+    Host installations are not supported starting 2021. Consider using [Docker](InstallationNotes.md) when planning new tt-rss installations.
+
+    This document is considered deprecated. Information here may be obsolete and/or inaccurate.
 
 You **have** to setup one of this methods before you can start using tt-rss
 properly, otherwise your feeds won’t be updated.

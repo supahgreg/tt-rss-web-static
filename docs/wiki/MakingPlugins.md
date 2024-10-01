@@ -9,12 +9,12 @@ You can use sample plugins bundled with tt-rss and [other
 plugins](../Plugins.md) as a starting point. Ask on the forums if you need help
 with anything specific.
 
-WIP: Auto-generated API reference is available here:
+Auto-generated PHP API reference is available here:
 
-- https://srv.tt-rss.org/ttrss-docs/classes/PluginHost.html
-- https://srv.tt-rss.org/ttrss-docs/classes/Plugin.html
+- https://tt-rss.org/ttrss-docs/classes/PluginHost.html
+- https://tt-rss.org/ttrss-docs/classes/Plugin.html
 
-Frontend (JS) uses different hooks, defined in <code>js/PluginHost.js</code>.
+Frontend (JS) uses different hooks, defined in [PluginHost.js](https://git.tt-rss.org/fox/tt-rss.git/tree/js/PluginHost.js)
 
 A few more example plugins are available in the [samples](https://gitlab.tt-rss.org/tt-rss/tt-rss-samples) repository.
 

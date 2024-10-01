@@ -1,8 +1,8 @@
 # Sphinx Search
 
-This document is considered deprecated. Legacy search plugin is not maintained, and configuration examples apply to old Sphinx engine versions.
+!!! warning
 
-----
+    This document is considered deprecated. Legacy search plugin is not maintained, and configuration examples apply to old Sphinx engine versions.
 
 With [sphinx_search](https://git.tt-rss.org/fox/ttrss-search-sphinx) plugin tt-rss is capable of using
 [Sphinx](http://www.sphinxsearch.com) full-text search engine.

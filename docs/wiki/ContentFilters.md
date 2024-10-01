@@ -9,6 +9,12 @@ Matching is case-insensitive,
 [PCRE](http://php.net/manual/en/reference.pcre.pattern.syntax.php) pattern
 syntax is used.
 
+!!! notice
+
+    Filter test dialog may not give entirely accurate results, especially for
+    complex filters. It is suggested to test filters using ``Feed debugger`` (hotkey `f D`) if you
+    feel that some filter is somehow misfiring on a specific feed.
+
 ### Load order
 
 Filters are loaded in user-specified order and applied sequentially. It is
@@ -35,13 +41,20 @@ expressions.
 
 Filter matching is performed during feed processing.
 
-Some actions may be applied only when the article is initially imported from the
-feed. Other actions may be applied every time article is seen in the originating
-feed. It is suggested to only rely on filters applying to articles imported
-after the filter had been created - they will not retroactively apply to your
-article database.
+!!! notice
+
+    Some actions may be applied only when the article is initially imported from the
+    feed. Other actions may be applied every time article is seen in the originating
+    feed. It is suggested to only rely on filters applying to articles imported
+    after the filter had been created - they will not retroactively apply to your
+    article database.
 
 Several actions are available:
+
+!!! warning
+
+    Filters may not apply actions conditionally based on previous filters. All actions for an article are applied together, once.
+    See  [this thread](https://community.tt-rss.org/t/filter-on-labels/4195/2) for a detailed explanation.
 
 1. ``Delete article`` - do not import article from the feed, does not
 actually delete anything from the database
@@ -59,17 +72,3 @@ the parameter, a signed integer number. Final article score is calculated after 
 After all matching filters had been computed for the article, it is either
 imported with modifications as specified by the rules, or dropped if `Delete
 article` action has been found.
-
-### Testing filters
-
-Filter test dialog may not give entirely accurate results, especially for
-complex filters. It is suggested to test filters using ``Feed debugger`` if you
-feel that some filter is somehow misfiring on a specific feed.
-
-### FAQ
-
-#### I'm trying to make a filter which works conditionally based on an action of a previous filter, and it doesn't work. What gives?
-
-It's a design limitation. All actions for an article are applied together, once.
-[Click here](https://community.tt-rss.org/t/filter-on-labels/4195/2) for a
-detailed explanation.

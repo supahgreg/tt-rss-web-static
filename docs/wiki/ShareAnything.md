@@ -11,4 +11,4 @@ application.
 ![](../images/share_anything.png)
 
 Since they have no actual originating feed, shared articles are placed into
-``Archived articles`` feed and then set published.
+[Archived articles](ArchivedFeed.md) feed and then set published.

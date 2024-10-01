@@ -6,9 +6,10 @@ this icon:
 
 ![](../images/gen_feed_icon.png)
 
-Note that subscribing to your own feed of search results is going to cause
-duplicate articles on each and every feed update. See this forum thread for
-details: https://community.tt-rss.org/t/behaviour-of-search-feeds/122/2
+!!! warning
+
+    Subscribing to your own feed of search results is going to produce
+    duplicate articles on each and every feed update. See [this forum thread](https://community.tt-rss.org/t/behaviour-of-search-feeds/122/2) for details.
 
 ## Data protection
 
@@ -25,8 +26,6 @@ shared articles`).
 ```
 http://example.com/tt-rss/public.php?op=rss&id=61&is_cat=1&view-mode=adaptive&key=...
 ```
-
-Note: `backend.php` would also work.
 
 -   ``id`` (integer) - requested feed ID
 -   ``is_cat`` (boolean) - whether the feed is a category

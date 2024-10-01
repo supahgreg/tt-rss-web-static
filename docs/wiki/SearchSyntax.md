@@ -1,9 +1,8 @@
 # Search Syntax
 
-This only applies to built-in search, plugins like ``sphinx_search`` may
-override this syntax.
+!!! notice
 
------
+    This only applies to built-in search, plugins like ``sphinx_search`` may override this syntax.
 
 Search query consists of several keywords. Keyword starting with "-" is
 considered a negative match. Several special keywords are available:

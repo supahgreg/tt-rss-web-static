@@ -1,16 +1,16 @@
 # Installation Guide
 
-The only supported way to run tt-rss is under Docker. You can use official
-images off Docker Hub (AMD64 only) or make your own if you're running another
-architecture or simply want to.
+The only supported way to run tt-rss is under Docker. Official images (AMD64 only) are available
+on [Docker Hub](https://hub.docker.com/u/cthulhoo) (preferred) and [Gitlab](https://gitlab.tt-rss.org/tt-rss/tt-rss/container_registry) (fallback).
 
-**Note**: Podman is not Docker. Please don't report issues when using Podman or podman-compose.
+!!! notice
 
-See also: [Host installation (not supported)](InstallationNotesHost.md).
+    Podman is not Docker. Please don't report issues when using Podman or podman-compose.
 
-This setup uses PostgreSQL and runs tt-rss using several containers as outlined
-below. In a production environment I suggest using an external Patroni cluster
-instead of PostgreSQL 'db' container.
+This setup uses PostgreSQL and runs tt-rss using several containers as outlined below. In a production environment I suggest using an external [Patroni cluster](https://patroni.readthedocs.io/en/latest/)
+instead of a single `db` container.
+
+----
 
 Images are signed using [cosign](https://docs.sigstore.dev/cosign/verifying/verify/). You can verify the signatures as follows:
 
@@ -30,7 +30,11 @@ $ cosign verify --key cosign.pub cthulhoo/ttrss-web-nginx:latest \
   --private-infrastructure=true
 ```
 
-## .env
+## TL;DR
+
+Place both `.env` and `docker-compose.yml` together in a directory, edit `.env` as you see fit, run `docker compose up -d`.
+
+### .env
 
 ```ini
 # Put any local modifications here.
@@ -45,7 +49,8 @@ $ cosign verify --key cosign.pub cthulhoo/ttrss-web-nginx:latest \
 
 # ADMIN_USER_* settings are applied on every startup.
 
-# Set admin user password to this value. If not set, random password will be generated on startup, look for it in the 'app' container logs.
+# Set admin user password to this value. If not set, random password
+# will be generated on startup, look for it in the 'app' container logs.
 #ADMIN_USER_PASS=
 
 # Sets admin user access level to this value. Valid values:
@@ -65,10 +70,8 @@ TTRSS_DB_USER=postgres
 TTRSS_DB_NAME=postgres
 TTRSS_DB_PASS=password
 
-# You will likely need to set this to the correct value - it should point to external tt-rss URL as seen in your browser.
-TTRSS_SELF_URL_PATH=http://example.com/tt-rss
-
-# You can customize other config.php defines by setting overrides here. See tt-rss/.docker/app/Dockerfile for complete list. Examples:
+# You can customize other config.php defines by setting overrides here.
+# See tt-rss/.docker/app/Dockerfile for a complete list.
 
 # You probably shouldn't disable auth_internal unless you know what you're doing.
 # TTRSS_PLUGINS=auth_internal,auth_remote
@@ -77,12 +80,13 @@ TTRSS_SELF_URL_PATH=http://example.com/tt-rss
 # TTRSS_FORCE_ARTICLE_PURGE=30
 # ...
 
-# Bind exposed port to 127.0.0.1 to run behind reverse proxy on the same host. If you plan expose the container, remove "127.0.0.1:".
+# Bind exposed port to 127.0.0.1 to run behind reverse proxy on the same host.
+# If you plan to expose the container, remove "127.0.0.1:".
 HTTP_PORT=127.0.0.1:8280
 #HTTP_PORT=8280
 ```
 
-## docker-compose.yml
+### docker-compose.yml
 
 ```yaml
 version: '3'
@@ -180,9 +184,11 @@ services:
       context: https://git.tt-rss.org/fox/tt-rss.git
 ```
 
-`BUILDKIT_CONTEXT_KEEP_GIT_DIR` build argument is needed to display tt-rss version properly. If that doesn't work for you (no BuildKit?) you'll have to resort to terrible hacks, as described in this thread: https://community.tt-rss.org/t/tiny-tiny-rss-vunknown-unsupported/6187/7
+`BUILDKIT_CONTEXT_KEEP_GIT_DIR` build argument is needed to display tt-rss version properly. If that doesn't work for you (no BuildKit?) you'll have to resort to terrible hacks, as described in [this thread](https://community.tt-rss.org/t/tiny-tiny-rss-vunknown-unsupported/6187/7).
 
-Note that self-built images are not supported.
+!!! warning
+
+    Self-built images are not supported.
 
 ### I got the updated compose file above and now my database keeps restarting
 
@@ -190,9 +196,9 @@ Error message: The data directory was initialized by PostgreSQL version 12, whic
 
 Official PostgreSQL containers have no support for migrating data between major versions. You can do one of the following:
 
-1. Replace `postgres:15-alpine` with `postgres:12-alpine` in the compose file (or use `docker-compose.override.yml`, see below) and keep using PG 12
-2. Use this DB container which would automatically upgrade the database - https://github.com/pgautoupgrade/docker-pgautoupgrade
-3. Migrate the data manually using pg_dump & restore (somewhat complicated if you haven't done it before)
+1. Replace `postgres:15-alpine` with `postgres:12-alpine` in the compose file (or use `docker-compose.override.yml`, see below) and keep using PG 12;
+2. Use [this DB container](https://github.com/pgautoupgrade/docker-pgautoupgrade) which would automatically upgrade the database;
+3. Migrate the data manually using pg_dump & restore (somewhat complicated if you haven't done it before);
 
 See also: https://community.tt-rss.org/t/docker-compose-setup-broken-repo-missing/6164/15
 
@@ -282,9 +288,9 @@ Note: `sudo -E` is needed to keep environment variables.
 
 ### How do I add plugins and themes?
 
-For official plugins, you can use plugin installer in `Preferences` &rarr; `Plugins`.
+!!! notice
 
---------
+   First party plugins can be added using plugin installer in `Preferences` &rarr; `Plugins`.
 
 By default, tt-rss code is stored on a persistent docker volume (``app``). You can find
 its location like this:
@@ -338,21 +344,24 @@ PING app (172.18.0.3): 56 data bytes
 round-trip min/avg/max = 0.128/0.159/0.206 ms
 ```
 
-Containers communicate via DNS names assigned by Docker based on service names defined in `docker-compose.yml`. This means that services (specifically, `app`) in the YML must not be renamed, and Docker DNS service should be functional.
+Containers communicate via DNS names assigned by Docker based on service names defined in `docker-compose.yml`. This means that services (specifically, `app`) and Docker DNS service should be functional.
 
 Similar issues may be also caused by Docker `iptables` functionality either being disabled or conflicting with `nftables`.
+
+### I want to rename `app` (FPM) container
+
+You can but you'll need to pass `APP_UPSTREAM` environment variable to the `web-nginx` container with its new name.
 
 ### How do I put this container behind a reverse proxy?
 
 - Don't forget to pass `X-Forwarded-Proto` to the container if you're using HTTPS, otherwise tt-rss would generate plain HTTP URLs.
-- You will need to set ``SELF_URL_PATH`` to a correct (i.e. visible from the outside) value in the ``.env`` file.
-- Address and port correspond to `HTTP_PORT` in `.env`, default:
+- Upstream address and port are set using `HTTP_PORT` in `.env`:
 
 ```ini
 HTTP_PORT=127.0.0.1:8280
 ```
 
-##### Nginx:
+#### Nginx example
 
 ```nginx
 location /tt-rss/ {
@@ -396,7 +405,7 @@ server {
 
 Note that `proxy_pass` in this example points to container website root.
 
-##### Apache
+#### Apache example
 
 ```
 <IfModule mod_proxy.c>
@@ -436,7 +445,7 @@ If you have `backups` container enabled, stock configuration makes automatic bac
 
 Note that this container is included as a safety net for people who wouldn't bother with backups otherwise. If you value your data, you should invest your time into setting up something like [WAL-G](https://github.com/wal-g/wal-g) instead.
 
--------------------------
+#### Restoring backups
 
 A process to restore the database from such backup would look like this:
 
@@ -477,10 +486,14 @@ See also: https://community.tt-rss.org/t/60-ssl-certificate-problem-unable-to-ge
 
 You'll need to set several mandatory environment values to the container running web-nginx image:
 
-1. `APP_UPSTREAM` should point to the fully-qualified DNS service name provided by the application (fpm) container/pod;
+1. `APP_UPSTREAM` should point to the fully-qualified DNS service name provided by the app (FPM) container/pod;
 2. `RESOLVER` should be set to `kube-dns.kube-system.svc.cluster.local`
 
 Link to discussion with examples: https://community.tt-rss.org/t/resolving-issues-with-latest-commit-on-k8s/6208/7 and below
+
+### Where's the helm chart?
+
+I don't provide one. You will have to make your own.
 
 ### I'm using Podman, and...
 
