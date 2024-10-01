@@ -16,12 +16,11 @@ There are two kinds of plugins: user and system. User plugins are enabled in
 configuration](wiki/GlobalConfig.md) directive <code>PLUGINS</code> which is a
 comma-separated list of enabled system plugins, i.e.
 
-```php
+```js
 putenv('TTRSS_PLUGINS=auth_internal, other_plugin');
 ```
 
-- system plugins are always enabled for all users
-- if multiple search plugins are loaded, only the first one is used
+System plugins are always enabled for all users. If multiple search plugins are loaded, only the first one is used
 
 If you are interested in making plugins, see
 [MakingPlugins](wiki/MakingPlugins.md),
@@ -30,103 +29,107 @@ official plugins](https://gitlab.tt-rss.org/tt-rss/plugins) to get you started.
 
 ### Installing plugins
 
-Copy plugin folder to ```tt-rss/plugins.local``` then activate it in the
-settings panel. Plugin folder name should correspond to plugin class name
-defined in ``(plugin)/init.php``, i.e. ``Af_ExamplePlugin`` should be copied to
-``plugins.local/af_exampleplugin``.
+!!! notice
 
-## Extra plugins
+    First party plugins can be added via built-in plugin installer in `Preferences` &rarr; `Plugins`.
 
-### First party (maintained on this site but not bundled with tt-rss)
+Copy plugin folder to ```tt-rss/plugins.local``` then activate it in the settings panel.
+Plugin folder name should correspond to plugin class name defined in ``(plugin)/init.php``,
+i.e. ``Af_ExamplePlugin`` should be copied to ``plugins.local/af_exampleplugin``.
 
-These can be installed via built-in plugin installer in `Preferences` &rarr; `Plugins`.
+## First party plugins (maintained on this site but not bundled with tt-rss)
 
 Complete list is [available here](https://gitlab.tt-rss.org/tt-rss/plugins).
 
-### Third party plugins
+## Third party plugins
 
-* Third party plugins may be unmaintained and incompatible with newer tt-rss
-  code (especially those from the old forums). Please report plugin-related
-  problems to their developers.
-* See also: [themes & plugins subforum](https://community.tt-rss.org/c/tiny-tiny-rss/themes-and-plugins/).
+!!! warning
 
-### We’re not responsible for third party plugins. Use at your own risk.
+    We’re not responsible for third party plugins. Use at your own risk.
 
-#### Sharing plugins
+!!! notice
 
-##### A Tiny Tiny RSS plugin to post to a Wallabag v2 instance
+    Third party plugins may be unmaintained and incompatible with newer tt-rss
+    code (especially those from the old forums). Please report plugin-related
+    problems to their developers.
+
+See also: [themes & plugins subforum](https://community.tt-rss.org/c/tiny-tiny-rss/themes-and-plugins/).
+
+### Sharing plugins
+
+#### A Tiny Tiny RSS plugin to post to a Wallabag v2 instance
 
 https://github.com/joshp23/ttrss-to-wallabag-v2
 
-##### A plugin for Tiny Tiny RSS, to shorten urls via Yourls
+#### A plugin for Tiny Tiny RSS, to shorten urls via Yourls
 
 https://github.com/joshp23/tt-rss-yourls
 
-##### Adds support for sharing links with Shaarli to tt-rss
+#### Adds support for sharing links with Shaarli to tt-rss
 
 https://github.com/joshp23/tt-rss-shaarli
 
-##### Convert DOI and other links to Sci-Hub links in TT-Rss
+#### Convert DOI and other links to Sci-Hub links in TT-Rss
 
 https://github.com/joshp23/ttrss-to-Sci-Hub
 
-#### Feed data manipulation plugins
+### Feed data manipulation plugins
 
-##### Enable embedded videos in feeds - videoframes
+#### Enable embedded videos in feeds - videoframes
 
 https://github.com/tribut/ttrss-videoframes
 
-##### Configurable plugin to replace article stub with content from the linked URL's page
+#### Configurable plugin to replace article stub with content from the linked URL's page
 
 https://github.com/feediron/ttrss_plugin-feediron
 
-##### A simple plugin to assist in the display of images from NASA's Astronomy Picture of the Day feed in TT-RSS
+#### A simple plugin to assist in the display of images from NASA's Astronomy Picture of the Day feed in TT-RSS
 
 https://github.com/joshp23/TTRSS-APOD-Fix
 
-#### Webcomics plugins
+### Webcomics plugins
 
-##### Comic plugin GU Comics, Married to the sea & Toothpaste for dinner
+#### Comic plugin GU Comics, Married to the sea & Toothpaste for dinner
 
 https://github.com/tribut/ttrss-comics
 
-##### Lint/tidy plugin to repair invalid feeds
+#### Lint/tidy plugin to repair invalid feeds
 
 https://github.com/Churten/tt-rss-ff-xmllint
 
-##### Embed content from Tapastic rss streams
+#### Embed content from Tapastic rss streams
 
 https://github.com/ldidry/af_tapastic.git
 
-#### API plugins
+### API plugins
 
-##### FreshRSS / Google Reader API Support
+#### FreshRSS / Google Reader API Support
 
 Use any RSS app or client that supports FreshRSS or the Google Reader API.
 
 https://github.com/eric-pierce/freshapi
 
-##### Fever API emulator
+#### Fever API emulator
 
 Simulates the Fever API for reading RSS Feeds with your Fever clients.
 
 https://github.com/DigitalDJ/tinytinyrss-fever-plugin
 
-#### Other plugins
+### Other plugins
 
-##### Favicon badge plugin
+#### Favicon badge plugin
 
 https://community.tt-rss.org/t/favicon-badge-plugin/1441
 
-##### Generate QR codes from article links, with xhr support and no disk cache
+#### Generate QR codes from article links, with xhr support and no disk cache
 
 https://github.com/GregThib/ttrss-qrcodegen
 
-##### Send XMPP notifications via Prosody mod_post_msg
+#### Send XMPP notifications via Prosody mod_post_msg
 
 https://github.com/joshp23/ttrss-notify-xmpp-prosody
 
-##### Plugins for alternative navigation and night mode
+#### Plugins for alternative navigation and night mode
 
 Set of plugins to (1) use cursor keys for a tree-style article navigation; (2) change to a minimal set of hotkeys; (3) toggle night mode for custom themes; (4) change the sort order of unread articles to Oldest first.
 
