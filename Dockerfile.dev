@@ -19,3 +19,4 @@ RUN mkdocs build --strict
 FROM registry.fakecake.org/docker.io/nginxinc/nginx-unprivileged:1-alpine
 
 COPY --from=build /app/public /usr/share/nginx/html
+COPY redirects.conf /etc/nginx/conf.d/
