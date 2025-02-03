@@ -1,5 +1,11 @@
 # SSL Certificate Authentication
 
+!!! warning
+
+    This guide is considered legacy and is no longer supported as it is not compatible with
+    [stock docker compose](InstallationNotes.md) setup. Please don't report any issues when
+    trying to DIY this.
+
 This article details the steps to enable user authentication with TT-RSS using a client certificate.
 
 ## Prerequisites
