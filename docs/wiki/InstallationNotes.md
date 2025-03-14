@@ -12,7 +12,25 @@ instead of a single `db` container.
 
 ----
 
-Images are signed using [cosign](https://docs.sigstore.dev/cosign/verifying/verify/). You can verify the signatures as follows:
+Repository commits are signed with the following GPG key:
+
+```
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+mDMEYpzS6xYJKwYBBAHaRw8BAQdAmTuuLIwuSTyqQH/pBHdwtUbOrvB0y5s8T+K6
+pxk+Vqq0IEFuZHJldyBEb2xnb3YgPGZveEBmYWtlY2FrZS5vcmc+iJMEExYKADsW
+IQSuZ4ygEAtUcvjwk3MaVrT6JdSvKgUCYpzS6wIbAwULCQgHAgIiAgYVCgkICwIE
+FgIDAQIeBwIXgAAKCRAaVrT6JdSvKmysAP0RL3Du5AHEJaowqO4lNMkpaz+74Gzc
+l2/G1RrWjlWDxAEA1yudUfy4VcKJWbckq/73Iocz2qOEOpIHb9KHBrNupQa4OARi
+nNLrEgorBgEEAZdVAQUBAQdABGxt5TSwGQx40DoQv7tFAuE2zL3gtivoZlpa93sK
+rjMDAQgHiHgEGBYKACAWIQSuZ4ygEAtUcvjwk3MaVrT6JdSvKgUCYpzS6wIbDAAK
+CRAaVrT6JdSvKta2AP4hBFkHaefkE8sqf6mAWuhYChYRWpRQffD8eapLkVpNLgEA
+jSU28KYibF0x/db/jghtJ0b0kOLONIBOSuD7E5jFAgc=
+=wZ+H
+-----END PGP PUBLIC KEY BLOCK-----
+```
+
+Docker images are signed using [cosign](https://docs.sigstore.dev/cosign/verifying/verify/). You can verify the signatures as follows:
 
 Save the following public key as `cosign.pub`:
 
