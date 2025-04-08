@@ -1,6 +1,6 @@
-# Transparent encryption
+# At rest encryption
 
-Transparent at-rest encryption is optionally supported for sensitive data stored in the database, currently limited to stored session data and passwords for feeds with authentication enabled.
+Transparent at rest encryption is optionally supported for sensitive data stored in the database, currently limited to stored session data and passwords for feeds with authentication enabled.
 
 To enable, [global configuration](GlobalConfig.md) option `TTRSS_ENCRYPTION_KEY` should be set to a 32-byte hex string of random bytes, which may be generated using CLI like this:
 
