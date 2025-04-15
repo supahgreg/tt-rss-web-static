@@ -88,15 +88,6 @@ body.ttrss_main .cdm .content img, body.ttrss_main .cdm .content video {
 
 `90vh` means "90% of viewport height". This works on Chromium and derivatives, you can use `90%` for Firefox.
 
-### I want to migrate to a different database
-
-One common use case for this is moving from MySQL to PostgreSQL.
-
-If you don't want to migrate your stored articles, export and import your feeds via OPML, which would also
-migrate your tt-rss settings and filters.
-
-If you want to migrate your articles, use [data-migration](https://git.tt-rss.org/fox/ttrss-data-migration.git/tree/README.md) plugin.
-
 ### Feeds stop updating for users who rarely login
 
 This is controlled by a global configuration setting. You can override (or disable) it through environment or `config.php` by setting `TTRSS_DAEMON_UPDATE_LOGIN_LIMIT` to `0`.

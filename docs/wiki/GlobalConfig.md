@@ -60,11 +60,10 @@ Should have at least these options defined:
 ```php
 <?php
 
-putenv('TTRSS_DB_TYPE=pgsql'); # or mysql
-putenv('TTRSS_DB_HOST=mydbhost');
+putenv('TTRSS_DB_HOST=patroni.example.com');
 putenv('TTRSS_DB_USER=mydbuser');
 putenv('TTRSS_DB_PASS=mydbpass');
-putenv('TTRSS_DB_PORT=5432'); # or 3306
+putenv('TTRSS_DB_PORT=5432');
 putenv('TTRSS_SELF_URL_PATH=http://example.com/tt-rss/'); # fully-qualified URL of your tt-rss install
 putenv('TTRSS_PHP_EXECUTABLE=/path/to/php-cli-binary'); # normally something like /usr/bin/php
 ```

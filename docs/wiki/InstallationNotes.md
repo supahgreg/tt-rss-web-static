@@ -7,7 +7,7 @@ on [Docker Hub](https://hub.docker.com/u/cthulhoo) (preferred) and [Gitlab](http
 
     Podman is not Docker. Please don't report issues when using Podman or podman-compose.
 
-This setup uses PostgreSQL and runs tt-rss using several containers as outlined below. In a production environment I suggest using an external [Patroni cluster](https://patroni.readthedocs.io/en/latest/) instead of a single `db` container.
+This setup uses PostgreSQL and runs tt-rss using several containers as outlined below. We recommend using an external [Patroni cluster](https://patroni.readthedocs.io/en/latest/) instead of a single `db` container in production deployments.
 
 ## Verifying signatures
 
