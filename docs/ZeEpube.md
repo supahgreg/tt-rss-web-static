@@ -43,6 +43,9 @@ Use the following compose setup to either pull or build your own images:
 ```ini
 # Put any local modifications here.
 
+OWNER_UID=1000
+OWNER_GID=1000
+
 # Calibre library base directory (mounts to /books)
 BOOKS_DIR=/home/user/calibre/Books
 
@@ -50,11 +53,26 @@ BOOKS_DIR=/home/user/calibre/Books
 EPUBE_ADMIN_USER=admin
 EPUBE_ADMIN_PASS=password
 
+# APP_WEB_ROOT=/var/www/html/books
+# APP_BASE=
+
 # bind exposed port to 127.0.0.1 by default in case reverse proxy is used.
 # if you plan to run the container standalone and need origin port exposed
 # use next HTTP_PORT definition (or remove "127.0.0.1:").
 HTTP_PORT=127.0.0.1:8280
 #HTTP_PORT=8280
+
+# Optional OAuth
+# EPUBE_OIDC_URL=
+# EPUBE_OIDC_NAME=
+# EPUBE_OIDC_CLIENT_ID=
+# EPUBE_OIDC_CLIENT_SECRET=
+
+# PostgreSQL is optional, default is SQLite
+# EPUBE_DB_TYPE=pgsql
+# EPUBE_DB_USER=postgres
+# EPUBE_DB_PASS=password
+# EPUBE_DB_NAME=postgres
 ```
 
 ### docker-compose.yml
@@ -65,30 +83,19 @@ version: '3'
 services:
   # optional dictionary server (add other dictionaries via Dockerfile)
   # comment it out if you don't need it
-
   dict:
     restart: unless-stopped
-    build:
-      dockerfile: .docker/dict/Dockerfile
-      context: https://git.tt-rss.org/fox/the-epube.git
+    image: cthulhoo/the-epube-dict:latest
 
   app:
-    build:
-      dockerfile: .docker/app/Dockerfile
-      context: https://git.tt-rss.org/fox/the-epube.git
-      args:
-        BUILDKIT_CONTEXT_KEEP_GIT_DIR: 1
+    image: cthulhoo/the-epube-fpm-static:latest
     restart: unless-stopped
-    env_file:
-      - .env
     volumes:
       - app:/var/www/html
       - ${BOOKS_DIR}:/books:ro
 
   web-nginx:
-    build:
-      dockerfile: .docker/web-nginx/Dockerfile
-      context: https://git.tt-rss.org/fox/the-epube.git
+    image: cthulhoo/the-epube-web-nginx:latest
     restart: unless-stopped
     ports:
       - ${HTTP_PORT}:8080
