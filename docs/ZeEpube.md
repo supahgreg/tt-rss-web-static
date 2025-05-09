@@ -24,7 +24,9 @@ See also:
 
 ## Screenshots
 
-![](images/epube/library1.webp){ width="350", align=left } ![](images/epube/reader2.webp){ width="131" }
+![](images/epube/library1.webp){ width="350", align=left }
+
+![](images/epube/reader2.webp){ width="131" }
 
 ## UI cheat sheet
 

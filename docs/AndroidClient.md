@@ -8,7 +8,15 @@ hide:
 
 ## Screenshots
 
-![](images/tt-rss-android/Screenshot_20250509_135136.webp){ width="120", align=left } ![](images/tt-rss-android/Screenshot_20250509_135154.webp){ width="120", align=left } ![](images/tt-rss-android/Screenshot_20250509_135217.webp){ width="120", align=left } ![](images/tt-rss-android/Screenshot_20250509_135426.webp){ width="120", align=left } ![](images/tt-rss-android/Screenshot_20250509_135438.webp){ width="120" }
+![](images/tt-rss-android/Screenshot_20250509_135136.webp){ width="120", align=left }
+
+![](images/tt-rss-android/Screenshot_20250509_135154.webp){ width="120", align=left }
+
+![](images/tt-rss-android/Screenshot_20250509_135217.webp){ width="120", align=left }
+
+![](images/tt-rss-android/Screenshot_20250509_135426.webp){ width="120", align=left }
+
+![](images/tt-rss-android/Screenshot_20250509_135438.webp){ width="120" }
 
 ## Download
 
