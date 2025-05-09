@@ -29,20 +29,6 @@ jSU28KYibF0x/db/jghtJ0b0kOLONIBOSuD7E5jFAgc=
 -----END PGP PUBLIC KEY BLOCK-----
 ```
 
-### Android
-
-You can verify APK signatures using [apksigner](https://developer.android.com/tools/apksigner):
-
-```sh
-$ apksigner verify --print-certs org.fox.ttrss-fdroid.apk
-Signer #1 certificate DN: CN=Andrew Dolgov, OU=N/A, O=tt-rss.org, L=Saint-Petersburg, ST=N/A, C=RU
-Signer #1 certificate SHA-256 digest: c74664ba0fd8f8c97e2a548926609df1369236dd9d9d14c0e5c20b8c2b08cf06
-Signer #1 certificate SHA-1 digest: ac97a3ced638cd750272dab50c08ca979910dc74
-Signer #1 certificate MD5 digest: e4f38ce99c44714e3c21821a1c13717f
-```
-
-Signature digests must match above values.
-
 ### Docker
 
 Docker images are signed using [cosign](https://docs.sigstore.dev/cosign/verifying/verify/). You can verify the signatures as follows:

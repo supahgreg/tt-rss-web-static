@@ -6,9 +6,7 @@ hide:
 
 Tiny Tiny RSS is a free and open source web-based news feed (RSS/Atom) reader and aggregator
 
-<img src="images/ttrss/21.03/Screenshot%202021-03-10%20152046.webp" style="max-width : 350px; height : auto; float : left; margin-right : 16px; margin-bottom : 16px;">
-
-<img src="images/ttrss/21.03/Screenshot%202021-03-10%20152846.webp" style="max-width : 350px; height : auto; float;"/>
+![](images/tt-rss/21.03/Screenshot_2021-03-10_152046.webp){ width="350", align=left } ![](images/tt-rss/21.03/Screenshot_2021-03-10_152846.webp){ width="350" }
 
 ## Features
 
@@ -27,9 +25,7 @@ Tiny Tiny RSS is a free and open source web-based news feed (RSS/Atom) reader an
     -   [flexible article filtering](wiki/ContentFilters.md),
     -   [JSON API](ApiReference.md),
     -   and [much more](https://gitlab.tt-rss.org/tt-rss/plugins)…
--   [Android client](https://gitlab.tt-rss.org/tt-rss/tt-rss-android/-/releases);
-
-<a href="https://hosted.weblate.org/engage/tt-rss/"><img src="https://hosted.weblate.org/widget/tt-rss/svg-badge.svg"/></a>
+-   [Android client](AndroidClient.md);
 
 ## Demo
 
