@@ -13,6 +13,7 @@ Tiny Tiny RSS is a free and open source web-based news feed (RSS/Atom) reader an
 -   Free software, licensed under [GNU GPLv3](http://www.gnu.org/copyleft/gpl.html);
 -   Self-hosted: control your own data and protect your privacy instead of relying on third party services;
 -   Supports:
+    -   organizing feeds by folders (and subfolders),
     -   [feed aggregation / syndication](wiki/GeneratedFeeds.md),
     -   keyboard shortcuts,
     -   OPML import/export,
