@@ -2,3 +2,9 @@
    border: 1px solid var(--md-primary-fg-color);
       box-shadow: 0 0 .2rem #0000001a,0 .2rem .4rem #0003;
 }
+
+.md-content h1,
+.md-content h2
+.md-content h3 {
+	clear : both;
+}
