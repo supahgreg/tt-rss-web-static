@@ -20,7 +20,6 @@ plugins:
 extra_css:
   - stylesheets/extra.css
 theme:
-  custom_dir: overrides
   logo: https://tt-rss.org/images/icon_classic_128.png
   favicon: https://tt-rss.org/favicon.ico
   plugins:

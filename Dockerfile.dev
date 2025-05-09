@@ -12,7 +12,6 @@ RUN pip config --global set global.index-url $PYPI_PROXY && \
 
 ADD docs /app/docs
 ADD mkdocs.yml /app/
-ADD overrides /app/overrides
 
 RUN mkdocs build --strict
 
