@@ -4,7 +4,7 @@ hide:
   - toc
 ---
 
-# Tiny Tiny RSS for Android
+# Android client
 
 ## Screenshots
 
