@@ -108,8 +108,6 @@ volumes:
   app:
 ```
 
-For host installation, see [README.md](https://git.tt-rss.org/fox/the-epube.git/tree/README.md)
-
 ## FAQ
 
 ### Moving between pages is slow with some books
