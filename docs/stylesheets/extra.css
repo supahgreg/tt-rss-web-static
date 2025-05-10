@@ -1,6 +1,6 @@
 .md-content img {
    border: 1px solid var(--md-primary-fg-color);
-      box-shadow: 0 0 .2rem #0000001a,0 .2rem .4rem #0003;
+   box-shadow: 0 0 .2rem #0000001a,0 .2rem .4rem #0003;
 }
 
 .md-content h1,
