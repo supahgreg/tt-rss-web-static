@@ -20,7 +20,7 @@ hide:
 
 ## Download
 
-Releases are build automatically for every commit pushed to master branch and [published on Gitlab](https://gitlab.tt-rss.org/tt-rss/tt-rss-android/-/releases).
+Releases are built automatically for every commit pushed to master branch and [published on Gitlab](https://gitlab.tt-rss.org/tt-rss/tt-rss-android/-/releases).
 
 !!! warning
 
