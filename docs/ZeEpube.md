@@ -14,7 +14,7 @@ Self-hosted web EPUB reader using [EPUB.js](https://github.com/futurepress/epub.
 * word definition lookups using dictd / Wiktionary;
 * supports Chrome homescreen "app mode";
 * optional hyphenation using [hyphen](https://github.com/ytiurin/hyphen) library;
-* various themes, etc;
+* dark mode, themes, etc;
 
 See also:
 
@@ -31,8 +31,11 @@ See also:
 ### Mobile
 
 ![](images/epube/mobile/Screenshot_20250516_155939.webp){ width="120", align=left }
+![](images/epube/mobile/Screenshot_20250516_164212.webp){ width="120", align=left }
 ![](images/epube/mobile/Screenshot_20250516_160100.webp){ width="120", align=left }
-![](images/epube/mobile/Screenshot_20250516_160122.webp){ width="120" }
+![](images/epube/mobile/Screenshot_20250516_164304.webp){ width="120", align=left }
+![](images/epube/mobile/Screenshot_20250516_160122.webp){ width="120", align=left }
+![](images/epube/mobile/Screenshot_20250516_164403.webp){ width="120", align=left }
 
 ## UI cheat sheet
 
