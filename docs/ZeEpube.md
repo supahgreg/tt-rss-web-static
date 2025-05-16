@@ -23,9 +23,16 @@ See also:
 
 ## Screenshots
 
-![](images/epube/library1.webp){ width="350", align=left }
+### Desktop
 
-![](images/epube/reader2.webp){ width="131" }
+![](images/epube/Screenshot_2025-05-16_at_15.50.58.webp){ width="350", align=left }
+![](images/epube/Screenshot_2025-05-16_at_15.52.29.webp){ width="350" }
+
+### Mobile
+
+![](images/epube/mobile/Screenshot_20250516_155939.webp){ width="120", align=left }
+![](images/epube/mobile/Screenshot_20250516_160100.webp){ width="120", align=left }
+![](images/epube/mobile/Screenshot_20250516_160122.webp){ width="120" }
 
 ## UI cheat sheet
 
