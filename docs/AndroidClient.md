@@ -45,6 +45,10 @@ There's no built-in auto updater, I suggest using [Obtainium](https://obtainium.
 
 When adding new application in Obtainium, paste [app project page](https://gitlab.tt-rss.org/tt-rss/tt-rss-android) in first field, and select "Gitlab" in the "Override source" dropdown below.
 
+### I want to help test the app! Are there development builds available?
+
+Sometimes. Releases are not created for signed non-master branch builds, you can get the APKs from build pipeline artifacts [here](https://gitlab.tt-rss.org/tt-rss/tt-rss-android/-/jobs) - look for `build-signed-branch-apk`. Non-master builds install as a separate application with a gray icon.
+
 ### Why are you not on Google Play?
 
 As a small time FOSS developer, dealing with Google and their marketplace is a tremendous pain in the ass.
