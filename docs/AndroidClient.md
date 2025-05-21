@@ -23,7 +23,7 @@ Releases are built automatically for every commit pushed to master branch and [p
 
 !!! warning
 
-     This is the only official and supported way to get the APK. If you see the app on any marketplace or anywhere else, it had been uploaded there without my knowledge nor consent.
+     This is the only official and supported way to get the APK. If you see the app on any marketplace or anywhere else, it had been uploaded there without my knowledge or consent.
 
 Release APKs are signed. You can verify the signature using [apksigner](https://developer.android.com/tools/apksigner):
 
