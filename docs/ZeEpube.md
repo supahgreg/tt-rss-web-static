@@ -7,20 +7,6 @@ hide:
 
 Self-hosted web EPUB reader using [EPUB.js](https://github.com/futurepress/epub.js), Bootstrap, and [Calibre](https://calibre-ebook.com).
 
-* responsive, offline-capable design;
-* integrates with Calibre library;
-* can use either SQLite or PostgreSQL for its own database;
-* multi-device sync of last-read pages (when online);
-* word definition lookups using dictd / Wiktionary;
-* supports Chrome homescreen "app mode";
-* optional hyphenation using [hyphen](https://github.com/ytiurin/hyphen) library;
-* dark mode, themes, etc;
-
-See also:
-
-* [Demo](https://the-epube-demo.tt-rss.org/) (login as <code>demo</code>, <code>demo</code>; database is restored every six hours)
-* [Android client (wrapper)](https://gitlab.tt-rss.org/main/the-epube-android)
-
 ## Screenshots
 
 ### Desktop
@@ -36,6 +22,22 @@ See also:
 ![](images/epube/mobile/Screenshot_20250516_164304.webp){ width="120", align=left }
 ![](images/epube/mobile/Screenshot_20250516_160122.webp){ width="120", align=left }
 ![](images/epube/mobile/Screenshot_20250516_164403.webp){ width="120", align=left }
+
+## Features
+
+* responsive, offline-capable design;
+* integrates with Calibre library;
+* can use either SQLite or PostgreSQL for its own database;
+* multi-device sync of last-read pages (when online);
+* word definition lookups using dictd / Wiktionary;
+* supports Chrome homescreen "app mode";
+* optional hyphenation using [hyphen](https://github.com/ytiurin/hyphen) library;
+* dark mode, themes, etc;
+
+See also:
+
+* [Demo](https://the-epube-demo.tt-rss.org/) (login as <code>demo</code>, <code>demo</code>; database is restored every six hours)
+* [Android client (wrapper)](https://gitlab.tt-rss.org/main/the-epube-android)
 
 ## UI cheat sheet
 
