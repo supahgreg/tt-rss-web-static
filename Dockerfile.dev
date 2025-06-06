@@ -3,12 +3,9 @@ FROM registry.fakecake.org/docker.io/python:3.11-alpine AS build
 WORKDIR /app
 
 ADD requirements.txt /app
+ADD pip.conf /etc/pip.conf
 
-ENV PYPI_PROXY=https://nexus.fakecake.org/repository/pip/simple/
-
-RUN pip config --global set global.index-url $PYPI_PROXY && \
-   pip config --global set global.trusted-host $PYPI_PROXY && \
-   pip3 install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 ADD docs /app/docs
 ADD mkdocs.yml /app/
