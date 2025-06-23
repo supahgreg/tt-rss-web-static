@@ -15,7 +15,7 @@ Search query consists of several keywords. Keyword starting with "-" is consider
 * ``tag:mytag`` - articles which have specified tag
 * ``title:``, ``author:`` - self explanatory
 
-When searching by keyword with spaces, use quotes like this: `"title:string with spaces"` or `"tag:multiple words"`
+When searching by keyword with spaces, use quotes like this: `"title:string with spaces"` or `tag:"multiple words"`
 
 If no special keywords are specified, search is done using PostgreSQL [Full Text Search](https://www.postgresql.org/docs/current/textsearch-intro.html) engine.
 
