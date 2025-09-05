@@ -1,5 +1,10 @@
 variables:
   REGISTRY_PROJECT: cthulhoo
+  FF_SCRIPT_SECTIONS: "true"
+  FF_USE_FASTZIP: "true"
+  ARTIFACT_COMPRESSION_LEVEL: fast
+  CACHE_COMPRESSION_LEVEL: fast
+  TRANSFER_METER_FREQUENCY: 5s
 
 stages:
   - build
