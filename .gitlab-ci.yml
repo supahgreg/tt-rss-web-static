@@ -31,6 +31,9 @@ build:
     - if: $CI_OPEN_MERGE_REQUESTS
       when: never
     - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+  cache:
+    paths:
+      - .cache
 
 build-image:
   extends: .build-docker-kaniko
