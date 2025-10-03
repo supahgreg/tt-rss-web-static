@@ -1,53 +1,15 @@
 # Installation Guide
 
-The only supported way to run tt-rss is under Docker. Official images (AMD64 only) are available
-on [Docker Hub](https://hub.docker.com/u/cthulhoo) (preferred) and [Gitlab](https://gitlab.tt-rss.org/tt-rss/tt-rss/container_registry) (fallback).
+The only supported way to run tt-rss is under Docker.
+
+Due to the original tt-rss project and its infrastructure being discontinued, there are not currently
+"official" Docker images utilizing the code from https://github.com/supahgreg/tt-rss .
 
 !!! notice
 
     Podman is not Docker. Please don't report issues when using Podman or podman-compose.
 
 This setup uses PostgreSQL and runs tt-rss using several containers as outlined below. We recommend using an external [Patroni cluster](https://patroni.readthedocs.io/en/latest/) instead of a single `db` container in production deployments.
-
-## Verifying signatures
-
-Repository commits are signed with the following GPG key:
-
-```
------BEGIN PGP PUBLIC KEY BLOCK-----
-
-mDMEYpzS6xYJKwYBBAHaRw8BAQdAmTuuLIwuSTyqQH/pBHdwtUbOrvB0y5s8T+K6
-pxk+Vqq0IEFuZHJldyBEb2xnb3YgPGZveEBmYWtlY2FrZS5vcmc+iJMEExYKADsW
-IQSuZ4ygEAtUcvjwk3MaVrT6JdSvKgUCYpzS6wIbAwULCQgHAgIiAgYVCgkICwIE
-FgIDAQIeBwIXgAAKCRAaVrT6JdSvKmysAP0RL3Du5AHEJaowqO4lNMkpaz+74Gzc
-l2/G1RrWjlWDxAEA1yudUfy4VcKJWbckq/73Iocz2qOEOpIHb9KHBrNupQa4OARi
-nNLrEgorBgEEAZdVAQUBAQdABGxt5TSwGQx40DoQv7tFAuE2zL3gtivoZlpa93sK
-rjMDAQgHiHgEGBYKACAWIQSuZ4ygEAtUcvjwk3MaVrT6JdSvKgUCYpzS6wIbDAAK
-CRAaVrT6JdSvKta2AP4hBFkHaefkE8sqf6mAWuhYChYRWpRQffD8eapLkVpNLgEA
-jSU28KYibF0x/db/jghtJ0b0kOLONIBOSuD7E5jFAgc=
-=wZ+H
------END PGP PUBLIC KEY BLOCK-----
-```
-
-### Docker
-
-Docker images are signed using [cosign](https://docs.sigstore.dev/cosign/verifying/verify/). You can verify the signatures as follows:
-
-Save the following public key as `cosign.pub`:
-
-```
------BEGIN PUBLIC KEY-----
-MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEtoahWEy+L2JZCyDZ3+sKacGjhLCj
-DDZpyS24bZzLoqZ3uEROqDusa9F9gNWP4sd3nbH02Tc0x89x5mM29wVg3w==
------END PUBLIC KEY-----
-```
-
-Verify signature using `cosign`:
-
-```sh
-$ cosign verify --key cosign.pub cthulhoo/ttrss-web-nginx:latest \
-  --private-infrastructure=true
-```
 
 ## TL;DR
 
@@ -113,7 +75,7 @@ version: '3'
 services:
 
   # see FAQ entry below if upgrading from a different PostgreSQL major version (e.g. 12 to 15):
-  # https://tt-rss.org/wiki/InstallationNotes/#i-got-the-updated-compose-file-above-and-now-my-database-keeps-restarting
+  # https://github.com/supahgreg/tt-rss-web-static/blob/main/docs/wiki/InstallationNotes.md#i-got-the-updated-compose-file-above-and-now-my-database-keeps-restarting
   db:
     image: postgres:15-alpine
     restart: unless-stopped
@@ -195,7 +157,7 @@ services:
     image: cthulhoo/ttrss-fpm-pgsql-static:latest
     build:
       dockerfile: .docker/app/Dockerfile
-      context: https://git.tt-rss.org/fox/tt-rss.git
+      context: https://github.com/supahgreg/tt-rss.git
       args:
         BUILDKIT_CONTEXT_KEEP_GIT_DIR: 1
 
@@ -203,10 +165,10 @@ services:
     image: cthulhoo/ttrss-web-nginx:latest
     build:
       dockerfile: .docker/web-nginx/Dockerfile
-      context: https://git.tt-rss.org/fox/tt-rss.git
+      context: https://github.com/supahgreg/tt-rss.git
 ```
 
-`BUILDKIT_CONTEXT_KEEP_GIT_DIR` build argument is needed to display tt-rss version properly. If that doesn't work for you (no BuildKit?) you'll have to resort to terrible hacks, as described in [this thread](https://community.tt-rss.org/t/tiny-tiny-rss-vunknown-unsupported/6187/7).
+`BUILDKIT_CONTEXT_KEEP_GIT_DIR` build argument is needed to display tt-rss version properly. If that doesn't work for you (no BuildKit?) you'll have to resort to terrible hacks.
 
 !!! warning
 
@@ -222,18 +184,11 @@ Official PostgreSQL containers have no support for migrating data between major 
 2. Use [this DB container](https://github.com/pgautoupgrade/docker-pgautoupgrade) which would automatically upgrade the database;
 3. Migrate the data manually using pg_dump & restore (somewhat complicated if you haven't done it before);
 
-See also: https://community.tt-rss.org/t/docker-compose-setup-broken-repo-missing/6164/15
-
 ### I'm using docker-compose.override.yml and now I'm getting schema update (and other) strange issues
 
 Alternatively, you've changed something related to `/var/www/html/tt-rss` in `docker-compose.yml`.
 
 You screwed up your docker setup somehow, so tt-rss can't update itself to the persistent storage location on startup (this is just an example of one issue, there could be many others).
-
-Related threads:
-
- - https://community.tt-rss.org/t/schema-version-is-wrong-please-upgrade-the-database/5150
- - https://community.tt-rss.org/t/closed-problem-with-database-schema-update-to-the-latest-version-146-to-145/5138/7?u=fox
 
 Either undo your changes or figure how to fix the problem you created and everything should work properly.
 
@@ -262,11 +217,11 @@ TTRSS_SELF_URL_PATH=http://example.com/tt-rss
 
 Don't use quotes around values. Note the prefix (`TTRSS_`) before the value.
 
-Look [here](https://tt-rss.org/wiki/GlobalConfig) for more information.
+Look [here](https://github.com/supahgreg/tt-rss-web-static/blob/main/docs/wiki/GlobalConfig.md) for more information.
 
 #### Container options
 
-Some options, but not all, are mentioned in `.env-dist`. You can see all available options in the [Dockerfile](https://git.tt-rss.org/fox/tt-rss.git/tree/.docker/app/Dockerfile#n53).
+Some options, but not all, are mentioned in `.env-dist`. You can see all available options in the [Dockerfile](https://github.com/supahgreg/tt-rss/blob/main/.docker/app/Dockerfile).
 
 ### How do I customize the YML without commiting my changes to git?
 
@@ -456,11 +411,6 @@ networks:
 
 If your service uses a non-standard (i.e. not 80 or 443) port, make an internal reverse proxy sidecar container for it.
 
-See also:
-
-- https://community.tt-rss.org/t/heads-up-several-vulnerabilities-fixed/3799/
-- https://community.tt-rss.org/t/got-specified-url-seems-to-be-invalid-when-subscribing-to-an-internal-rss-feed/4024
-
 ### Backup and restore
 
 If you have `backups` container enabled, stock configuration makes automatic backups (database, local plugins, etc.) once a week to a separate storage volume.
@@ -486,8 +436,6 @@ docker-compose exec db /bin/bash \
   | gzip -9 > backup.sql.gz
 ```
 
-([source](https://community.tt-rss.org/t/docker-compose-tt-rss/2894/233?u=fox))
-
 ### How do I use custom certificates?
 
 You need to mount custom certificates into the *app* and *updater* containers like this:
@@ -502,16 +450,12 @@ volumes:
 
 Don't forget to restart the containers.
 
-See also: https://community.tt-rss.org/t/60-ssl-certificate-problem-unable-to-get-local-issuer-certificate/4838/4?u=fox
-
 ### How do I run these images on K8S?
 
 You'll need to set several mandatory environment values to the container running web-nginx image:
 
 1. `APP_UPSTREAM` should point to the fully-qualified DNS service name provided by the app (FPM) container/pod;
 2. `RESOLVER` should be set to `kube-dns.kube-system.svc.cluster.local`
-
-Link to discussion with examples: https://community.tt-rss.org/t/resolving-issues-with-latest-commit-on-k8s/6208/7 and below
 
 ### Where's the helm chart?
 

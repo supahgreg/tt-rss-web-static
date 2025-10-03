@@ -12,11 +12,8 @@ hide:
 ### I want to check how tt-rss renders my feed / the feed I'm trying to use is parsed incorrectly
 
 - tt-rss expects valid XML feed data which is parsed using libxml. Any XML parse errors, should you feel that libxml is misbehaving (which is unlikely), should be reported to libxml developers. We don't add hacks for invalid XML on tt-rss side.
-- You can use the [demo](https://demo.tt-rss.org) to see how tt-rss reacts to any specific feed.
 
 Plugins may affect parsing, consider disabling any plugins before investigating XML-related issues.
-
-See also: https://community.tt-rss.org/search?q=libxml%20error
 
 ### I managed to lock myself out of tt-rss
 
@@ -62,14 +59,6 @@ Alternatively, you can either temporarily disable `auth_remote` (replace it with
   now removed), try temporarily removing all third party themes from
   ``themes.local``
 
-See also:
-
-- <https://community.tt-rss.org/t/no-css-loaded-on-main-page/1957/4>
-- <https://community.tt-rss.org/t/drop-down-menus-have-text-not-arrows/1703/5>
-- <https://community.tt-rss.org/t/drop-down-menus-have-text-not-arrows/1703/6>
-- <https://community.tt-rss.org/t/panels-and-menu-messed-up/2208/3>
-- <https://community.tt-rss.org/t/ttrss-not-rendering-properly-missing-css/2359/26>
-
 ### Third party theme or plugin broke after update making the UI unusable
 
 Log in to tt-rss in safe mode (use an incognito window if you can't get to login page).
@@ -112,10 +101,6 @@ When in doubt, use Feed debugger (`f D` on a feed) to see additional purging-rel
 [11:08:10/6783] purge_feed: deleted 1 articles.
 [11:08:10/6783] update done.
 ```
-
-See also:
-
-- https://community.tt-rss.org/t/issues-with-feed-purging/4117
 
 Related question:
 

@@ -42,11 +42,6 @@ Self-hosted web EPUB reader using [EPUB.js](https://github.com/futurepress/epub.
 * optional hyphenation using [hyphen](https://github.com/ytiurin/hyphen) library;
 * dark mode, themes, etc;
 
-See also:
-
-* [Demo](https://the-epube-demo.tt-rss.org/) (login as <code>demo</code>, <code>demo</code>; database is restored every six hours)
-* [Android client (wrapper)](https://gitlab.tt-rss.org/main/the-epube-android)
-
 ## UI cheat sheet
 
 * Switch pages: Left, Right, space, taps/clicks on left and right sides of the window

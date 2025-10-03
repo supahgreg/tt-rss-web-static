@@ -33,8 +33,6 @@ strings for better backwards compatibility.
 
 For boolean parameters the expected syntax is:
 
-<https://git.tt-rss.org/fox/tt-rss/src/master/classes/api.php#L11>
-
 - empty string, numeric zero, unquoted ``false`` literal (?), string literal ``"f"`` or ``"false"``: <b>FALSE</b>
 - anything else: <b>TRUE</b>
 

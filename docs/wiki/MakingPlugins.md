@@ -9,18 +9,16 @@ You can use sample plugins bundled with tt-rss and [other
 plugins](../Plugins.md) as a starting point. Ask on the forums if you need help
 with anything specific.
 
-Auto-generated PHP API reference is available here:
+Some useful information may be found here:
 
-- https://tt-rss.org/ttrss-docs/classes/PluginHost.html
-- https://tt-rss.org/ttrss-docs/classes/Plugin.html
+- https://github.com/supahgreg/tt-rss/blob/main/classes/PluginHost.php
+- https://github.com/supahgreg/tt-rss/blob/main/classes/Plugin.php
 
-Frontend (JS) uses different hooks, defined in [PluginHost.js](https://git.tt-rss.org/fox/tt-rss.git/tree/js/PluginHost.js)
-
-A few more example plugins are available in the [samples](https://gitlab.tt-rss.org/tt-rss/tt-rss-samples) repository.
+Frontend (JS) uses different hooks, which are defined in [PluginHost.js](https://github.com/supahgreg/tt-rss/blob/main/js/PluginHost.js)
 
 ## Localization support
 
-See ``time_to_read`` plugin for a complete example [here](https://gitlab.tt-rss.org/tt-rss/plugins/ttrss-time-to-read)
+See ``time_to_read`` plugin for a complete example [here](https://github.com/supahgreg/tt-rss-plugin-time-to-read)
 
 ### Implementation
 

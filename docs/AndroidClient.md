@@ -5,6 +5,10 @@ hide:
 
 # Android client
 
+## **IMPORTANT** 
+
+This content is no longer accurate, given the original tt-rss project has closed.
+
 ## Screenshots
 
 ![](images/tt-rss-android/Screenshot_20250509_135136.webp){ width="120", align=left }

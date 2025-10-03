@@ -7,7 +7,7 @@ manually. At most 15 messages are sent in one batch.
 
 !!! notice
 
-    [PHPMailer plugin](https://git.tt-rss.org/fox/ttrss-mailer-smtp) is required to send mail under Docker.
+    [PHPMailer plugin](https://github.com/supahgreg/tt-rss-plugin-mailer-smtp) is required to send mail under Docker.
 
 
 * Digests may be customized by editing ``templates/digest_template*.txt``.

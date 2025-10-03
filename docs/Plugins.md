@@ -22,10 +22,8 @@ putenv('TTRSS_PLUGINS=auth_internal, other_plugin');
 
 System plugins are always enabled for all users. If multiple search plugins are loaded, only the first one is used
 
-If you are interested in making plugins, see
-[MakingPlugins](wiki/MakingPlugins.md),
-[samples](https://gitlab.tt-rss.org/tt-rss/tt-rss-samples), and a list of [all
-official plugins](https://gitlab.tt-rss.org/tt-rss/plugins) to get you started.
+If you are interested in making plugins, see [MakingPlugins](wiki/MakingPlugins.md),
+https://github.com/topics/tt-rss-plugin , https://github.com/topics/ttrss-plugins , etc.
 
 ### Installing plugins
 
@@ -39,7 +37,7 @@ i.e. ``Af_ExamplePlugin`` should be copied to ``plugins.local/af_exampleplugin``
 
 ## First party plugins (maintained on this site but not bundled with tt-rss)
 
-Complete list is [available here](https://gitlab.tt-rss.org/tt-rss/plugins).
+https://github.com/supahgreg?tab=repositories&q=tt-rss-plugin&sort=name
 
 ## Third party plugins
 
@@ -52,8 +50,6 @@ Complete list is [available here](https://gitlab.tt-rss.org/tt-rss/plugins).
     Third party plugins may be unmaintained and incompatible with newer tt-rss
     code (especially those from the old forums). Please report plugin-related
     problems to their developers.
-
-See also: [themes & plugins subforum](https://community.tt-rss.org/c/tiny-tiny-rss/themes-and-plugins/).
 
 ### Sharing plugins
 
@@ -116,10 +112,6 @@ Simulates the Fever API for reading RSS Feeds with your Fever clients.
 https://github.com/DigitalDJ/tinytinyrss-fever-plugin
 
 ### Other plugins
-
-#### Favicon badge plugin
-
-https://community.tt-rss.org/t/favicon-badge-plugin/1441
 
 #### Generate QR codes from article links, with xhr support and no disk cache
 

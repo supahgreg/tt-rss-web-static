@@ -28,9 +28,3 @@ behavior.
 
 Additionally, tt-rss being blacklisted by feed publishers may negatively affect
 other users.
-
-See also:
-
-* [Readability got me banned from a server?](https://community.tt-rss.org/t/readability-got-me-banned-from-a-server/2874/33)
-* [Troublesome hooks - or not?](https://community.tt-rss.org/t/troublesome-hooks-or-not/2890)
-

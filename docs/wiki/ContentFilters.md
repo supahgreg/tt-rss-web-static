@@ -54,7 +54,6 @@ Several actions are available:
 !!! warning
 
     Filters may not apply actions conditionally based on previous filters. All actions for an article are applied together, once.
-    See  [this thread](https://community.tt-rss.org/t/filter-on-labels/4195/2) for a detailed explanation.
 
 1. ``Delete article`` - do not import article from the feed, does not
 actually delete anything from the database

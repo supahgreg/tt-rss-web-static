@@ -9,7 +9,7 @@ this icon:
 !!! warning
 
     Subscribing to your own feed of search results is going to produce
-    duplicate articles on each and every feed update. See [this forum thread](https://community.tt-rss.org/t/behaviour-of-search-feeds/122/2) for details.
+    duplicate articles on each and every feed update.
 
 ## Data protection
 

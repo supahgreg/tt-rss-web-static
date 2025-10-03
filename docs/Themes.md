@@ -9,12 +9,6 @@ Install by copying theme CSS (and any other content, if needed) into ``themes.lo
 
 **Please note that we’re not responsible for third party themes. Use at your own risk.**
 
-Themes and plugins are also available [on the forums](https://community.tt-rss.org/c/tiny-tiny-rss/themes-and-plugins). This is not necessarily a complete list.
-
-## Third party themes master list
-
-See also: https://community.tt-rss.org/c/tiny-tiny-rss/themes-and-plugins
-
 ### FeedMei Theme + Plugins for Tiny Tiny RSS
 
 <img src="https://codeberg.org/ltguillaume/feedmei/media/branch/main/SCREENSHOT.png" alt="">

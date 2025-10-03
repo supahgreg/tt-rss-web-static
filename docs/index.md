@@ -32,32 +32,25 @@ Tiny Tiny RSS is a free and open source web-based news feed (RSS/Atom) reader an
     -   [sharing arbitrary content through tt-rss](wiki/ShareAnything.md),
     -   [Plugins](Plugins.md) and [themes](Themes.md),
     -   embedding full article content via readability and site-specific plugins,
-    -   deduplication, including [perceptual hashing](https://git.tt-rss.org/fox/ttrss-perceptual-image-hash) for images,
+    -   deduplication, including [perceptual hashing](https://github.com/supahgreg/tt-rss-plugin-perceptual-image-hash) for images,
     -   podcasts,
     -   [flexible article filtering](wiki/ContentFilters.md),
     -   [JSON API](ApiReference.md),
-    -   and [much more](https://gitlab.tt-rss.org/tt-rss/plugins)…
+    -   and much more…
 -   [Android client](AndroidClient.md);
-
-## Demo
-
-See [here](https://demo.tt-rss.org/) (login as ``demo``, ``demo``). Resets every two hours which might log you out.
 
 ## Development
 
-* [CGit](https://git.tt-rss.org) is recommended to checkout code from;
-* [Gitlab](https://gitlab.tt-rss.org/tt-rss/tt-rss) is where development is happening;
+* https://github.com/supahgreg/tt-rss
 
 ## Get in touch
 
-Join [community forums](https://community.tt-rss.org/) if you have questions or need to report a bug.
-
-<small>If you absolutely need to contact me directly because of something important (i.e. responsible disclosure of a security issue), use [this](mailto:cthulhoo@gmail.com) email address.</small>
+Join https://github.com/supahgreg/tt-rss/discussions if you have questions or need to report a bug.
 
 ## Contribute
 
-* Help translate tt-rss into your own language using [Weblate](https://hosted.weblate.org/engage/tt-rss/);
-* [Code contribution guidelines](https://gitlab.tt-rss.org/tt-rss/tt-rss/-/blob/master/CONTRIBUTING.md?ref_type=heads);
+<!-- * Help translate tt-rss into your own language using [Weblate](https://hosted.weblate.org/engage/tt-rss/); -->
+* [Code contribution guidelines](https://github.com/supahgreg/tt-rss/blob/main/CONTRIBUTING.md);
 
 ## Installation
 
@@ -68,6 +61,6 @@ You will need the following:
 
 ### [Docker installation guide](wiki/InstallationNotes.md)
 
-Tiny Tiny RSS uses continuous development model based on [git master branch](https://git.tt-rss.org/fox/tt-rss.git/) which is considered stable. If possible, you should always be running latest master branch code.
+Tiny Tiny RSS uses continuous development model based on a `main` branch, which is considered stable. If possible, you should always be running latest main branch code.
 
 There’s no warranty. If it breaks you get to keep both parts.

@@ -2,8 +2,7 @@
 
 All settings (see `_DEFAULTS[]` for default values) are listed here:
 
-- https://tt-rss.org/ttrss-docs/classes/Config.html (auto-generated class documentation)
-- https://git.tt-rss.org/fox/tt-rss.git/tree/classes/Config.php (source code, including default values)
+- https://github.com/supahgreg/tt-rss/blob/main/classes/Config.php (source code, including default values)
 
 It is preferred to adjust tt-rss global configuration through the environment, i.e. defined in `.env` when using docker-compose setup:
 
@@ -77,5 +76,3 @@ the rules above:
 `define('DB_PORT', 'xxx')` &rarr; `putenv('TTRSS_DB_PORT=xxx')`.
 
 You can safely omit any settings that were at default values.
-
-[This thread](https://community.tt-rss.org/t/rip-config-php-hello-classes-config-php/4337/30) has relevant discussion and many examples.
